@@ -31,10 +31,10 @@ imm=U.dot(l).dot(V.T)
 imhat=np.zeros([99,57,3])
 enu=((0,20),(1,10),(2,5))
 #'''
-#for (i,k) in enu:
- #Uprime=U[:,0:k]
- #Dprime=np.diag(D[0:k])
- #Vprime=V[:,0:k]
+for (i,k) in enu:
+  Uprime=U[:,0:k]
+  Dprime=np.diag(D[0:k])
+  Vprime=V[:,0:k]
 for (i,k) in enu:
  Uprime=U[:,-k:]
  Dprime=np.diag(D[-k:])
@@ -54,7 +54,7 @@ plt.title('Estimated Error: {}\nK=5'.format(np.round_(np.linalg.norm(imm-imhat[:
 
 plt.imshow(imhat[:,:,2],cmap="gray")
 plt.tight_layout()
-#plt.show()
+plt.show()
 
 #Defective image
 
